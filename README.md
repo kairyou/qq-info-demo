@@ -13,6 +13,9 @@ yarn test
 yarn build
 ```
 
+#### TODOs
+- [ ] SCSS
+
 ### FAQs
 - Setup Logs
   ```bash
