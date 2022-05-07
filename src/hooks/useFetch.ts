@@ -44,6 +44,7 @@ const useFetch = (
   const fetch: EffectCallback = () => {
     if (!url) return;
     const fetchData = async (): Promise<void> => {
+      setData(null);
       setError('');
       setLoading(true);
       await instance
