@@ -13,14 +13,19 @@ yarn test
 yarn build
 ```
 
-#### TODOs
-- [ ] SCSS
+#### Project structure
+```
+```
 
-### FAQs
-- Setup Logs
-  ```bash
-  yarn create react-app ./ --template typescript
-  ```
+#### TODOs
+- [ ] add clear button to Text Field
+- [ ] add submit button?
+- [ ] SCSS
+- [ ] webpack alias?
+
+#### Change Logs
+- `yarn create react-app ./ --template typescript`
+- `yarn add axios` + hooks/useFetch
 
 
 <!-- 业务需求：
