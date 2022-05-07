@@ -3,7 +3,7 @@ import useFetch from 'hooks/useFetch';
 import Input from 'components/Input';
 import QQCard from 'components/Card/QQCard';
 import { toInteger } from 'utils/format';
-import { qqInfoApi } from 'config';
+import { qqInfoApi, qqLimit } from 'config';
 import './index.css';
 
 interface Props {
@@ -20,6 +20,7 @@ interface Props {
  */
 export default function QQInfo(props: Props) {
   const { style } = props;
+  const { min, max } = qqLimit;
   const [qqNumber, setQqNumber] = useState('');
   const { loading, data, error, fetch } = useFetch(
     qqInfoApi,
@@ -34,7 +35,7 @@ export default function QQInfo(props: Props) {
   );
   const onSubmit = () => {
     if (loading || data?.qq === qqNumber) return;
-    if (qqNumber.length >= 5 && qqNumber.length <= 11) {
+    if (qqNumber.length >= min && qqNumber.length <= max) {
       fetch();
     }
   };
@@ -48,7 +49,10 @@ export default function QQInfo(props: Props) {
     const qq = `${toInteger(value) || ''}`; // positive integer
     setQqNumber(qq);
   };
-  const user = { img: data?.qlogo, name: data?.name, text: data?.qq };
+  const user =
+    data?.code === 1 // request success
+      ? { img: data?.qlogo, name: data?.name, text: data?.qq }
+      : null;
   // console.warn(loading, error, data);
   return (
     <div className='QQInfo' style={style}>
@@ -56,6 +60,7 @@ export default function QQInfo(props: Props) {
         id='qq'
         label={'QQ'}
         placeholder={'请输入QQ号码'}
+        maxLength={max}
         onChange={onChange}
         onInput={onInput}
         onBlur={onSubmit}

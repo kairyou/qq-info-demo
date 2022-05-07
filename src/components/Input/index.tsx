@@ -12,6 +12,7 @@ interface Props {
   error?: string | any; // error message
   value?: any;
   placeholder?: string;
+  maxLength?: number;
   disabled?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: FormEvent<HTMLInputElement>) => void;
@@ -30,6 +31,7 @@ export default function Input(props: PropsWithChildren<Props>) {
     type = 'text',
     layout = 'underline',
     placeholder,
+    maxLength,
     onChange,
     onInput,
     onBlur,
@@ -60,6 +62,7 @@ export default function Input(props: PropsWithChildren<Props>) {
           onBlur={onBlur}
           value={value}
           disabled={disabled}
+          maxLength={maxLength}
         />
         {loading && <ProgressLinear size='2' />}
         {error && <p className='Input-message'>{error}</p>}

@@ -7,7 +7,7 @@ interface Props {
     img?: string;
     name?: string;
     text?: string;
-  };
+  } | null;
   style?: React.CSSProperties;
 }
 
@@ -16,7 +16,7 @@ interface Props {
  */
 export default function QQCard(props: PropsWithChildren<Props>) {
   const { className, data, style } = props;
-  if (!data?.name) return <></>;
+  if (!data) return <></>;
   return (
     <div className={`Card ${className}`} style={style}>
       {data.img && (

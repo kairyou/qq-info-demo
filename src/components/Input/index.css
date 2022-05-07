@@ -35,8 +35,12 @@
   line-height: 2em;
 }
 .Input-message {
-  margin: 0;
+  margin: 4px 0 0;
   font-size: 12px;
+}
+
+.Input-error input {
+  border-color: red;
 }
 .Input-error .Input-message {
   color: red;
