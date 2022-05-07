@@ -15,6 +15,29 @@ yarn build
 
 #### Project structure
 ```
+.
+├── App.css
+├── App.test.tsx
+├── App.tsx
+├── components
+│   ├── Body
+│   ├── Card
+│   ├── Form
+│   ├── Header
+│   ├── Input
+│   └── Progress
+├── config
+│   └── index.ts
+├── hooks
+│   └── useFetch.ts
+├── index.css
+├── index.tsx
+├── logo.svg
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── setupTests.ts
+└── utils
+    └── format.ts
 ```
 
 #### TODOs
