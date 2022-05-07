@@ -1,0 +1,50 @@
+.Progress-linear {
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+  width: 100%;
+}
+
+.Progress-linear__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: inherit;
+  background-color: var(--color-primary);
+  opacity: 0.3;
+  width: 100%;
+}
+
+.Progress-linear__indeterminate .long,
+.Progress-linear__indeterminate .short {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: auto;
+  height: inherit;
+  background-color: inherit;
+  animation-play-state: paused;
+  will-change: left, right;
+  background-color: var(--color-primary);
+}
+
+.Progress-linear--active .long,
+.Progress-linear--active .short {
+  animation-play-state: running;
+}
+
+.Progress-linear--active .long {
+  animation-name: indeterminate-ltr;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+}
+
+.Progress-linear--active .short {
+  animation-name: indeterminate-short-ltr;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+}

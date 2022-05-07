@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, PropsWithChildren } from 'react';
+import ProgressLinear from 'components/Progress/ProgressLinear';
 import './index.css';
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
   onInput?: (event: FormEvent<HTMLInputElement>) => void;
   onBlur?: (event: FormEvent<HTMLInputElement>) => void;
   layout?: 'underline';
+  loading?: boolean;
 }
 
 /**
@@ -34,6 +36,7 @@ export default function Input(props: PropsWithChildren<Props>) {
     value,
     disabled,
     error,
+    loading,
   } = props;
   return (
     <div
@@ -41,6 +44,7 @@ export default function Input(props: PropsWithChildren<Props>) {
         'Input',
         `Input-${layout}`,
         error && 'Input-error',
+        loading && 'Input-loading',
       ].join(' ')}
     >
       <label className='Input-label' htmlFor={id}>
@@ -57,6 +61,7 @@ export default function Input(props: PropsWithChildren<Props>) {
           value={value}
           disabled={disabled}
         />
+        {loading && <ProgressLinear size='2' />}
         {error && <p className='Input-message'>{error}</p>}
       </div>
     </div>
