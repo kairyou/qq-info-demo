@@ -1,0 +1,36 @@
+.Input {
+  position: relative;
+  display: inline-flex;
+  text-align: left;
+}
+.Input input {
+  box-sizing: border-box;
+  outline: none;
+  background: #fff;
+  border-color: #666;
+  border-style: solid;
+  height: 2em;
+  width: 120px;
+  padding: 4px 6px;
+}
+.Input input:focus {
+  border-color: var(--color-primary);
+}
+
+.Input-underline input {
+  border-width: 0;
+  border-bottom-width: 2px;
+}
+
+.Input-label {
+  margin-right: 10px;
+  font-weight: 600;
+  line-height: 2em;
+}
+.Input-message {
+  margin: 0;
+  font-size: 12px;
+}
+.Input-error .Input-message {
+  color: red;
+}
