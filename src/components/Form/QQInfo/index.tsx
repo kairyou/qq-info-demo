@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import useFetch from 'hooks/useFetch';
 import Input from 'components/Input';
+import QQCard from 'components/Card/QQCard';
 import { toInteger } from 'utils/format';
 import { qqInfoApi } from 'config';
 import './index.css';
@@ -47,7 +48,8 @@ export default function QQInfo(props: Props) {
     const qq = `${toInteger(value) || ''}`; // positive integer
     setQqNumber(qq);
   };
-  console.warn(loading, error, data);
+  const user = { img: data?.qlogo, name: data?.name, text: data?.qq };
+  // console.warn(loading, error, data);
   return (
     <div className='QQInfo' style={style}>
       <Input
@@ -62,6 +64,7 @@ export default function QQInfo(props: Props) {
         loading={loading}
         error={error}
       />
+      <QQCard className='mt-4' data={user} />
     </div>
   );
 }

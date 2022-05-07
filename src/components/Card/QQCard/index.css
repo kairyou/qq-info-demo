@@ -1,0 +1,36 @@
+.Card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: 500;
+  word-break: break-all;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  padding: 16px;
+}
+.Card-image {
+  align-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.Card-image img {
+  max-width: 40px;
+}
+.Card-body {
+  padding-left: 10px;
+}
+.Card-body h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.Card-body p {
+  margin: 0;
+}
