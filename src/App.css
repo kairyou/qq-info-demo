@@ -1,12 +1,12 @@
 html {
   background: #eee;
-  color: #333;
+  color: var(--font-color);
   overflow-y: scroll;
 }
 body {
-  font-size: 12px;
+  font-size: var(--font-size);
 }
 
 .App {
-  padding: 2vh 10px;
+  padding: 10vh 10px 0;
 }
