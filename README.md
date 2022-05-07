@@ -8,12 +8,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Runs the app in the development mode
 yarn start
 # [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-yarn test
+yarn 
 # Builds the app for production to the `build` folder
 yarn build
 ```
 
-#### Project structure
+#### Project structure (src)
 ```
 .
 ├── App.css
@@ -29,6 +29,7 @@ yarn build
 ├── config
 │   └── index.ts
 ├── hooks
+│   ├── useFetch.test.ts
 │   └── useFetch.ts
 ├── index.css
 ├── index.tsx
@@ -37,10 +38,12 @@ yarn build
 ├── reportWebVitals.ts
 ├── setupTests.ts
 └── utils
+    ├── format.test.ts
     └── format.ts
 ```
 
 #### TODOs
+- [x] add hooks/utils test
 - [ ] add clear button to Text Field
 - [ ] add submit button?
 - [ ] SCSS
