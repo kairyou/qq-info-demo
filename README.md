@@ -44,6 +44,8 @@ yarn build
 
 #### TODOs
 - [x] add hooks/utils test
+- [ ] optimization network requests
+- [ ] clean code
 - [ ] add clear button to Text Field
 - [ ] add submit button?
 - [ ] SCSS
